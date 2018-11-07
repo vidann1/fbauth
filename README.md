@@ -1,5 +1,11 @@
 [Screenshot](https://i.imgur.com/AI9nE4J.jpg)
 
+# Features:
+* Register
+* Login
+* Logout
+* Reset Password
+* Change Password
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
