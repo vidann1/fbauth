@@ -4,12 +4,14 @@ import { auth } from '../configuration';
 
 import * as routes from '../routes';
 
+
+
 import { Box, FormField, Grid, Button, RoundedButton, Image, Grommet, Text, TextInput } from "grommet";
 import { grommet } from "grommet/themes";
 import { deepMerge } from "grommet/utils";
+import '../css/App.css';
 
-
-const Register = ({ history }) => <div> <h1>Register</h1> <RegisterForm history={history} /> </div>
+const Register = ({ history }) => <div> <h1>Register</h1> <RegisterForm history={history} /> <p>Already have an account?</p><Link to={routes.LOGIN}><Button label="login"></Button></Link>  </div>
 
 const INIT_STATE = {
 	username: '',
@@ -60,18 +62,20 @@ class RegisterForm extends React.Component{
 
 		return(
 			<Grommet theme={grommet}>
-
+			<div id="page-wrap" className="app">
 			<form onSubmit={this.handleSubmit}>
 				<TextInput value={username} onChange={e => this.setState(byPropKey('username', e.target.value))} type="text" placeholder="Full Name"/>
+				<br />
 				<TextInput value={email} onChange={e => this.setState(byPropKey('email', e.target.value))} type="text" placeholder="email"/>
+				<br />
 				<TextInput value={passwordOne} onChange={e => this.setState(byPropKey('passwordOne', e.target.value))} type="password" placeholder="password"/>
+				<br />
 				<TextInput value={passwordTwo} onChange={e => this.setState(byPropKey('passwordTwo', e.target.value))} type="password" placeholder="password again"/>
+				<br />
 				<Button primary label="Register" type="submit" disabled={isInvalid}/>
-					
-				
 				{error && <p>{error.meesage}</p>}	
 			</form>
-
+			</div>
 			</Grommet>
 				
 			
@@ -79,7 +83,7 @@ class RegisterForm extends React.Component{
 	}
 }
 
-const RegisterLink = () => <div><p>Not a member?</p><Link to={routes.REGISTER}>Register</Link></div>
+const RegisterLink = () => <div><p>Don't have account?</p><Link to={routes.REGISTER}><Button label="register"></Button></Link></div>
 
 export default withRouter(Register);
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 import { RegisterLink } from './Register';
@@ -10,6 +10,9 @@ import { Box, FormField, Grid, Button, RoundedButton, Image, Grommet, Text, Text
 import { grommet } from "grommet/themes";
 import { deepMerge } from "grommet/utils";
 
+import { PasswordResetLink } from './PasswordReset';
+
+import '../css/App.css';
 
 
 const Login = ({ history }) =>
@@ -17,6 +20,7 @@ const Login = ({ history }) =>
     <h1>Login</h1>
     <LoginForm history={history} />
     <RegisterLink />
+    <PasswordResetLink />
   </div>
 
 const byPropKey = (propertyName, value) => () => ({
@@ -69,7 +73,7 @@ class LoginForm extends Component {
 
     return (
     <Grommet theme={grommet}>
-
+      <div className="app" id="page-wrap">
       <form onSubmit={this.onSubmit}>
         <TextInput
           value={email}
@@ -77,17 +81,18 @@ class LoginForm extends Component {
           type="text"
           placeholder="Email Address"
         />
+        <br />
         <TextInput
           value={password}
           onChange={event => this.setState(byPropKey('password', event.target.value))}
           type="password"
           placeholder="Password"
         />
-        <Box align="start" gap="small">
+        <br />
         <Button primary disabled={isInvalid} label="Login" type="submit"/>
         { error && <p>{error.message}</p> }
-        </Box>
       </form>
+      </div>
 	</Grommet>
 
     	/*
@@ -114,9 +119,10 @@ class LoginForm extends Component {
     );
   }
 }
-
+const LoginLink = () => <div><p>Already have an account?</p><Link to={routes.LOGIN}><Button label="login"></Button></Link></div>
 export default withRouter(Login);
 
 export {
   LoginForm,
+  LoginLink,
 };

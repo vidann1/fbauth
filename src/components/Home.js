@@ -9,7 +9,7 @@ export default class Home extends React.Component {
 	render() {
 		return (
 			<div className="app" id="page-wrap">
-				<h1>welcome</h1>
+				<h1>welcome home</h1>
 			</div>
 		);
 	}

@@ -6,8 +6,9 @@ import { grommet } from "grommet/themes";
 import { deepMerge } from "grommet/utils";
 import LogoutBtn from './Logout';
 
-import AuthUserContext from './AuthUserContext';
+import { Home } from 'grommet-icons';
 
+import AuthUserContext from './AuthUserContext';
 
 import * as routes from '../routes';
 
@@ -18,27 +19,23 @@ let styles = {
 }
 
 
-
-
-
-
 const Navigation = ({ authUser }) => 
 	<div>
 		{authUser ? <NavigationAuth /> : <NavigationDefault />}
 	</div>
 
 const NavigationAuth = () => 
-	<ul className="navbar">
-		<li><Link to={routes.HOME}>Home</Link></li>
-		<li><Link to={routes.ACCOUNT}>Profile</Link></li>
-		<li><LogoutBtn /></li>
+	<ul className="topnav">
+		<Anchor><li><Link to={routes.HOME}>Home</Link></li></Anchor>
+		<Anchor><li><Link to={routes.ACCOUNT}>Profile</Link></li></Anchor>
+		<Anchor><li><LogoutBtn /></li></Anchor>
 	</ul>
 
 const NavigationDefault = () => 
-	<ul className="navbar">
-		<li><Link to={routes.INDEX}>Home</Link></li>
-		<li><Link to={routes.LOGIN}>Login</Link></li>
-		<li><Link to={routes.REGISTER}>Register</Link></li>
+	<ul className="topnav">
+		<Anchor><li><Link to={routes.INDEX}>Home</Link></li></Anchor>
+		<Anchor><li><Link to={routes.LOGIN}>Login</Link></li></Anchor>
+		<Anchor><li><Link to={routes.REGISTER}>Register</Link></li></Anchor>
 	</ul>
 
 export default Navigation;

@@ -10,6 +10,7 @@ export default class Index extends React.Component {
 		return (
 			<div className="app" id="page-wrap">
 				<h1>welcome index</h1>
+				
 			</div>
 		);
 	}

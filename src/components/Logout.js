@@ -6,7 +6,8 @@ import { deepMerge } from "grommet/utils";
 
 
 const LogoutBtn = () => 
-	<Anchor primary label="logout" onClick={auth.doSignOut}/>
+
+	<Anchor primary label="logout" onClick={auth.doSignOut}></Anchor>
 	
 
 
