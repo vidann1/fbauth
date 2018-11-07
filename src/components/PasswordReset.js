@@ -40,6 +40,7 @@ class PasswordResetForm extends Component {
 	});
 		e.preventDefault();
 	}
+
 	render() {
 		const {
 			email,

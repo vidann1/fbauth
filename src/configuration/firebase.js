@@ -1,13 +1,15 @@
  import firebase from 'firebase/app';
  import 'firebase/auth';
 
+// 
+
   const config = {
-    apiKey: "AIzaSyC1OJsjCH96Xw49p7A1BnmlXZkh5kqyUDU",
-    authDomain: "auth-bbf40.firebaseapp.com",
-    databaseURL: "https://auth-bbf40.firebaseio.com",
-    projectId: "auth-bbf40",
-    storageBucket: "auth-bbf40.appspot.com",
-    messagingSenderId: "653660991260"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
   };
 
   if(!firebase.apps.length){

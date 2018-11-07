@@ -12,8 +12,8 @@ import { grommet } from "grommet/themes";
 import { deepMerge } from "grommet/utils";
 // Nav
 import Navigation from './Navigation';
-// import withAuthentication from './withAuth';
 
+// import withAuthentication from './withAuth';
 
 // components
 import Login from './Login';

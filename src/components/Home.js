@@ -1,16 +1,25 @@
 import React from 'react';
 import '../css/App.css';
+import withAuthorization from './withAuthorization';
 
-export default class Home extends React.Component {
+const authCondition = (authUser) => !!authUser;
+class Home extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 
+
 	render() {
+		
+
 		return (
 			<div className="app" id="page-wrap">
 				<h1>welcome home</h1>
+				<p>The Home Page is accessible by every signed in user.</p>
+
 			</div>
 		);
 	}
 }
+
+export default withAuthorization(authCondition)(Home);
